@@ -20,7 +20,7 @@ process {
                     }
                     IsDisabled = false
                     IsRequired = false
-                    Environments = ["Dev"]
+                    Environments = ["Dev", "Test"]
                     ExcludedEnvironments = []
                     Channels = []
                     TenantTags = []
