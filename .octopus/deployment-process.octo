@@ -6,21 +6,21 @@ process {
     SpaceId = "Spaces-1"
     Steps {
         run_a_script {
-            Id = "15b39e38-93ef-423c-855e-8001cbdbcf34"
+            Id = "8869425e-6c58-4aab-bf97-ccea4df23e01"
             Name = "Run a Script"
             Condition = "Success"
             StartTrigger = "StartAfterPrevious"
             PackageRequirement = "LetOctopusDecide"
             Actions {
                 run_a_script {
-                    Id = "96d2af9c-a4f3-47a8-aa80-5df08cdbda40"
+                    Id = "e5a9ec7f-378d-4fd4-a05c-1a80ceb3b74c"
                     Name = "Run a Script"
                     ActionType = "Octopus.Script"
                     Container {
                     }
                     IsDisabled = false
                     IsRequired = false
-                    Environments = ["Dev", "Test"]
+                    Environments = []
                     ExcludedEnvironments = []
                     Channels = []
                     TenantTags = []
@@ -67,5 +67,5 @@ process {
             }
         }
     }
-    RelatedDocumentIds = ["Dev"]
+    RelatedDocumentIds = []
 }
