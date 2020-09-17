@@ -20,7 +20,7 @@ process {
                     }
                     IsDisabled = false
                     IsRequired = false
-                    Environments = ["Dev", "test"]
+                    Environments = ["Dev", "test", "prod"]
                     ExcludedEnvironments = []
                     Channels = []
                     TenantTags = []
@@ -67,5 +67,5 @@ process {
             }
         }
     }
-    RelatedDocumentIds = ["Dev", "test"]
+    RelatedDocumentIds = ["Dev", "test", "prod"]
 }
