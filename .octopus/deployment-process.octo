@@ -21,7 +21,7 @@ process {
                     IsDisabled = false
                     IsRequired = false
                     Environments = ["Dev"]
-                    ExcludedEnvironments = []
+                    ExcludedEnvironments = ["Prod"]
                     Channels = []
                     TenantTags = []
                     Packages {
