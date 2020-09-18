@@ -2,70 +2,9 @@ process {
     Id = "deploymentprocess-Projects-1"
     OwnerId = "Projects-1"
     IsFrozen = false
-    Version = 3
+    Version = 0
     SpaceId = "Spaces-1"
     Steps {
-        run_a_script {
-            Id = "8869425e-6c58-4aab-bf97-ccea4df23e01"
-            Name = "Run a Script"
-            Condition = "Success"
-            StartTrigger = "StartAfterPrevious"
-            PackageRequirement = "LetOctopusDecide"
-            Actions {
-                run_a_script {
-                    Id = "e5a9ec7f-378d-4fd4-a05c-1a80ceb3b74c"
-                    Name = "Run a Script"
-                    ActionType = "Octopus.Script"
-                    Container {
-                    }
-                    IsDisabled = false
-                    IsRequired = false
-                    Environments = ["Dev", "test", "prod"]
-                    ExcludedEnvironments = []
-                    Channels = []
-                    TenantTags = []
-                    Packages {
-                    }
-                    Condition = "Success"
-                    Properties {
-                        octopus.action.runonserver {
-                            Key = "Octopus.Action.RunOnServer"
-                            Value {
-                                Value = "true"
-                                IsSensitive = false
-                                HasValue = true
-                            }
-                        }
-                        octopus.action.script.scriptsource {
-                            Key = "Octopus.Action.Script.ScriptSource"
-                            Value {
-                                Value = "Inline"
-                                IsSensitive = false
-                                HasValue = true
-                            }
-                        }
-                        octopus.action.script.syntax {
-                            Key = "Octopus.Action.Script.Syntax"
-                            Value {
-                                Value = "PowerShell"
-                                IsSensitive = false
-                                HasValue = true
-                            }
-                        }
-                        octopus.action.script.scriptbody {
-                            Key = "Octopus.Action.Script.ScriptBody"
-                            Value {
-                                Value = "#"
-                                IsSensitive = false
-                                HasValue = true
-                            }
-                        }
-                    }
-                }
-            }
-            Properties {
-            }
-        }
     }
-    RelatedDocumentIds = ["Dev", "test", "prod"]
+    RelatedDocumentIds = []
 }
