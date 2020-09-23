@@ -2,7 +2,7 @@ process {
     Id = "deploymentprocess-Projects-1"
     OwnerId = "Projects-1"
     IsFrozen = false
-    Version = 1
+    Version = 2
     SpaceId = "Spaces-1"
     Steps {
         run_a_script {
@@ -64,6 +64,105 @@ process {
                 }
             }
             Properties {
+            }
+        }
+        deploy_a_package {
+            Id = "24f1d399-2765-420c-a663-15512c37cbe7"
+            Name = "Deploy a Package"
+            Condition = "Success"
+            StartTrigger = "StartAfterPrevious"
+            PackageRequirement = "LetOctopusDecide"
+            Actions {
+                deploy_a_package {
+                    Id = "458c3bdc-35a6-4579-908a-acd50f39e482"
+                    Name = "Deploy a Package"
+                    ActionType = "Octopus.TentaclePackage"
+                    WorkerPoolVariable = ""
+                    Container {
+                    }
+                    IsDisabled = false
+                    IsRequired = false
+                    Environments = []
+                    ExcludedEnvironments = []
+                    Channels = []
+                    TenantTags = []
+                    Packages {
+                        item {
+                            Id = "8a42da90-e16c-423e-93c6-aecf25578976"
+                            Name = ""
+                            PackageId = "HelloWorld"
+                            FeedId = "feeds-builtin"
+                            AcquisitionLocation = "Server"
+                            Properties {
+                                selectionmode {
+                                    Key = "SelectionMode"
+                                    Value = "immediate"
+                                }
+                            }
+                        }
+                    }
+                    Condition = "Success"
+                    Properties {
+                        octopus.action.package.automaticallyrunconfigurationtransformationfiles {
+                            Key = "Octopus.Action.Package.AutomaticallyRunConfigurationTransformationFiles"
+                            Value {
+                                Value = "True"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                        octopus.action.package.automaticallyupdateappsettingsandconnectionstrings {
+                            Key = "Octopus.Action.Package.AutomaticallyUpdateAppSettingsAndConnectionStrings"
+                            Value {
+                                Value = "True"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                        octopus.action.enabledfeatures {
+                            Key = "Octopus.Action.EnabledFeatures"
+                            Value {
+                                Value = ",Octopus.Features.ConfigurationTransforms,Octopus.Features.ConfigurationVariables"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                        octopus.action.package.packageid {
+                            Key = "Octopus.Action.Package.PackageId"
+                            Value {
+                                Value = "HelloWorld"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                        octopus.action.package.feedid {
+                            Key = "Octopus.Action.Package.FeedId"
+                            Value {
+                                Value = "feeds-builtin"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                        octopus.action.package.downloadontentacle {
+                            Key = "Octopus.Action.Package.DownloadOnTentacle"
+                            Value {
+                                Value = "False"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                    }
+                }
+            }
+            Properties {
+                octopus.action.targetroles {
+                    Key = "Octopus.Action.TargetRoles"
+                    Value {
+                        Value = "web"
+                        IsSensitive = false
+                        HasValue = true
+                    }
+                }
             }
         }
     }
